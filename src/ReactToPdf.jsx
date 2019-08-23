@@ -19,7 +19,8 @@ class ReactToPdf extends PureComponent {
         'Target ref must be used or informed. See https://github.com/ivmarcos/react-to-pdf#usage.'
       );
     }
-    html2canvas(targetComponent, { logging: false }).then(canvas => {
+    html2canvas(targetComponent, { logging: false,          backgroundColor: '#5468ff'
+ }).then(canvas => {
       const imgData = canvas.toDataURL('image/png');
       const pdf = new JsPdf(options);
       pdf.addImage(imgData, 'JPEG', x, y);
